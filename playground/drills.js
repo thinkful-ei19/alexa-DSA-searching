@@ -22,5 +22,6 @@
 // first, start with finding midpoint, compare the Dewey Decimal value of book we want with midpoint
 // is this desired value/target greater than or smaller than the midpoint?
 // can eliminate that side the target is not on and repeat until target = item at that index
+// cool link to reference -> https://jorendorff.github.io/hackday/2012/library/
 
 
