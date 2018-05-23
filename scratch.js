@@ -15,7 +15,7 @@ function linearSearch(array, value) {
     return `After ${tries} tries, the item was not found in the dataset.`
 }
 
-// console.log(linearSearch(data, 45));
+console.log(linearSearch(data, 11));
 // console.log(linearSearch(data, 500));
 data.sort((a, b) => a - b);
 // console.log(data);
@@ -49,4 +49,4 @@ function binarySearch(array, value, start=0, end=array.length-1, tries=0) {
     }
 };
 
-console.log(binarySearch(data, 111, start, end, tries));
+console.log(binarySearch(data, 11, start, end, tries));
