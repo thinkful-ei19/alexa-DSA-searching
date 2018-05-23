@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Linear from './components/linear';
+import Form from './components/linear';
 
 import './App.css';
 
@@ -12,7 +12,7 @@ export default class App extends Component {
         </header>
 
         <main>
-          <Linear />
+          <Form />
        </main>
       </div>
     );
