@@ -146,6 +146,7 @@ class BinarySearchTree {
     }
   }
 
+  // **only difference is where its being pushed
 //////////// DFS: Pre-Order ////////////
 // process node
 // recursively step left
@@ -163,7 +164,11 @@ class BinarySearchTree {
     return arr;
   }
 
-  //////////// DFS: Pre-Order ////////////
+  //////////// DFS: In-Order ////////////
+  // recursively step left
+  // process node
+  // recursively step right
+
   dfsInOrder(arr = []) {
     if (this.left) {
         this.left.dfsInOrder(arr);
@@ -175,9 +180,24 @@ class BinarySearchTree {
     return arr;
   }
 
+  //////////// DFS: Post-Order ////////////
+  // recursively step left
+  // recursively step right
+  // process node
+
+  dfsPostOrder(arr = []) {
+      if (this.left) {
+          this.left.dfsPostOrder(arr);
+      }
+      if (this.right) {
+          this.right.dfsPostOrder(arr);
+      }
+      arr.push(this.key);
+      return arr;
+  }
 }
 
-// Tree Traversal
+
 
 //////////// create new BST ////////////
 
@@ -201,9 +221,12 @@ function main() {
   BST.insert(22);
 
 //   console.log(BST);
-// console.log(BST.dfsPreOrder()); // => 25, 15, 10, 4, 12, 24, 18, 22, 50, 35, 31, 44, 70, 66, 90
-console.log(BST.dfsInOrder());
-//   return BST;
+
+console.log(BST.dfsPreOrder()); // => 25, 15, 10, 4, 12, 24, 18, 22, 50, 35, 31, 44, 70, 66, 90
+
+console.log(BST.dfsInOrder()); // => 4, 10, 12, 15, 18, 22, 24, 25, 31, 35, 44, 50, 66, 70, 90
+
+console.log(BST.dfsPostOrder()); // => 4, 12, 10, 22, 18, 24, 15, 31, 44, 35, 66, 90, 70, 50, 25
 }
 
 main();
