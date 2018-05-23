@@ -162,6 +162,19 @@ class BinarySearchTree {
     }
     return arr;
   }
+
+  //////////// DFS: Pre-Order ////////////
+  dfsInOrder(arr = []) {
+    if (this.left) {
+        this.left.dfsInOrder(arr);
+    }
+    arr.push(this.key);
+    if (this.right) {
+        this.right.dfsInOrder(arr);
+    }
+    return arr;
+  }
+
 }
 
 // Tree Traversal
@@ -169,7 +182,7 @@ class BinarySearchTree {
 //////////// create new BST ////////////
 
 const BST = new BinarySearchTree();
-// 25 15 50 10 24 35 70 4 12 18 31 44 66 90 22
+// original bST -> 25 15 50 10 24 35 70 4 12 18 31 44 66 90 22
 function main() {
   BST.insert(25);
   BST.insert(15);
@@ -188,7 +201,8 @@ function main() {
   BST.insert(22);
 
 //   console.log(BST);
-console.log(BST.dfsPreOrder());
+// console.log(BST.dfsPreOrder()); // => 25, 15, 10, 4, 12, 24, 18, 22, 50, 35, 31, 44, 70, 66, 90
+console.log(BST.dfsInOrder());
 //   return BST;
 }
 
