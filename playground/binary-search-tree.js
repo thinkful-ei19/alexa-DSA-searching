@@ -222,11 +222,28 @@ function main() {
 
 //   console.log(BST);
 
-console.log(BST.dfsPreOrder()); // => 25, 15, 10, 4, 12, 24, 18, 22, 50, 35, 31, 44, 70, 66, 90
+// console.log(BST.dfsPreOrder()); // => 25, 15, 10, 4, 12, 24, 18, 22, 50, 35, 31, 44, 70, 66, 90
 
-console.log(BST.dfsInOrder()); // => 4, 10, 12, 15, 18, 22, 24, 25, 31, 35, 44, 50, 66, 70, 90
+// console.log(BST.dfsInOrder()); // => 4, 10, 12, 15, 18, 22, 24, 25, 31, 35, 44, 50, 66, 70, 90
 
-console.log(BST.dfsPostOrder()); // => 4, 12, 10, 22, 18, 24, 15, 31, 44, 35, 66, 90, 70, 50, 25
+// console.log(BST.dfsPostOrder()); // => 4, 12, 10, 22, 18, 24, 15, 31, 44, 35, 66, 90, 70, 50, 25
+
 }
 
 main();
+
+//////////// Max Profit ////////////
+
+// let arr =  [128, 97, 121, 123, 98, 97, 105];
+// let arr = [94, 93];
+function maxProfit(arr) {
+    let sortedArr = arr.sort((a, b) => a - b);
+    
+    let min = arr[0];
+    let max = arr[arr.length -1];
+
+    let maxProfit = max - min;
+    return maxProfit;
+}
+
+console.log(maxProfit(arr));
